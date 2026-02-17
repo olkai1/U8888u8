@@ -20,8 +20,10 @@ function chatRoutes(db) {
             const lang = language || 'en';
             const userId = req.user.id;
 
-            // ── RAG: Search knowledge base for relevant context ──
+            // ── RAG: Fetch all knowledge base for full context ──
             const allKB = await knowledgeBase.find({}).toArray();
+
+            // Score entries for relevance (used for confidence calculation)
             const q = question.toLowerCase();
             const scored = allKB.map(entry => {
                 let score = 0;
@@ -35,14 +37,17 @@ function chatRoutes(db) {
                     if (entry.category && q.includes(entry.category)) score += 5;
                 }
                 return { ...entry, score };
-            }).filter(e => e.score > 0).sort((a, b) => b.score - a.score).slice(0, 5);
+            }).sort((a, b) => b.score - a.score);
 
-            // ── Ask Gemini with knowledge context ──
-            const geminiResult = await askGemini(question, scored, lang);
+            // Send ALL KB to AI so it has complete info, prioritized by relevance
+            const contextForAI = scored;
+
+            // ── Ask AI with full knowledge context ──
+            const geminiResult = await askGemini(question, contextForAI, lang);
 
             let response;
             let confidence = 85;
-            let intent = scored.length > 0 ? scored[0].category : 'general';
+            let intent = scored[0]?.score > 0 ? scored[0].category : 'general';
 
             if (geminiResult.success) {
                 confidence = scored.length > 0 ? Math.min(95, 70 + scored[0].score * 3) : 75;
