@@ -694,6 +694,26 @@ const LIU_KNOWLEDGE = {
   },
 
   // ──────────────────────────────────────────
+  // COURSE MATERIALS (دورات) – PAST EXAMS & PDFs
+  // ──────────────────────────────────────────
+  courseExams: {
+    driveLink: "https://drive.google.com/drive/folders/1wf6zAUz4AG6iMz4olqqUuxt24bMk6IIN",
+    description: "LIU provides a shared Google Drive folder containing past exam papers (دورات), study materials, and PDF resources organized by specialization and course. This is an unofficial student resource maintained by LIU students to help each other succeed.",
+    descriptionAr: "توفر الجامعة مجلد Google Drive مشترك يحتوي على دورات سابقة وملفات PDF ومواد دراسية مرتبة حسب الاختصاص والمادة. هذا مورد غير رسمي يديره طلاب LIU لمساعدة بعضهم البعض.",
+    categories: [
+      { name: "Engineering Courses", nameAr: "دورات الهندسة", icon: "⚙️", subjects: ["Calculus", "Physics", "Circuits", "Programming", "Thermodynamics", "Statics", "Dynamics"] },
+      { name: "Pharmacy Courses", nameAr: "دورات الصيدلة", icon: "💊", subjects: ["Organic Chemistry", "Biochemistry", "Pharmacology", "Anatomy", "Physiology"] },
+      { name: "Business Courses", nameAr: "دورات إدارة الأعمال", icon: "📈", subjects: ["Accounting", "Finance", "Marketing", "Management", "Economics", "Statistics"] },
+      { name: "Arts & Sciences Courses", nameAr: "دورات الآداب والعلوم", icon: "🔬", subjects: ["Computer Science", "IT", "Biology", "Chemistry", "Mathematics", "Psychology"] },
+      { name: "Freshman Courses", nameAr: "دورات السنة التحضيرية", icon: "📖", subjects: ["English Composition", "Arabic Language", "Mathematics", "Computer Skills"] }
+    ],
+    howToUse: "1. Click the Google Drive link below\n2. Browse folders by specialization\n3. Find your course\n4. Download or view the PDF files",
+    howToUseAr: "١- اضغط على رابط Google Drive أدناه\n٢- تصفّح المجلدات حسب الاختصاص\n٣- ابحث عن مادتك\n٤- حمّل أو شاهد ملفات PDF",
+    note: "These materials are shared by students for educational purposes. Always study the official course material provided by your professors.",
+    noteAr: "هذه المواد مشاركة من الطلاب لأغراض تعليمية. احرص دائماً على دراسة المواد الرسمية التي يقدمها أساتذتك."
+  },
+
+  // ──────────────────────────────────────────
   // SUGGESTED QUESTIONS
   // ──────────────────────────────────────────
   suggestedQuestions: [
@@ -708,7 +728,8 @@ const LIU_KNOWLEDGE = {
     { text: "What are the tuition fees?", textAr: "ما هي الرسوم الدراسية؟", category: "tuition" },
     { text: "Tell me about student clubs", textAr: "أخبرني عن النوادي الطلابية", category: "student_affairs" },
     { text: "How to register for student phone plan?", textAr: "كيف أسجل خط الجامعة؟", category: "phone_plan" },
-    { text: "How do I contact admissions?", textAr: "كيف أتواصل مع قسم القبول؟", category: "contact" }
+    { text: "How do I contact admissions?", textAr: "كيف أتواصل مع قسم القبول؟", category: "contact" },
+    { text: "Where can I find past exams (dawrat)?", textAr: "وين بلاقي دورات سابقة؟", category: "course_exams" }
   ]
 };
 

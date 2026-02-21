@@ -1299,3 +1299,98 @@ body.rtl .message-bubble .school-section {
   border-color: #ef4444;
   color: #ef4444;
 }
+
+/* ═════════════════════════════════════════
+   COURSE MATERIALS (دورات) STYLES
+   ═════════════════════════════════════════ */
+.message-bubble .course-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.message-bubble .course-cat-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.message-bubble .course-cat-card:hover {
+  border-color: var(--accent-blue);
+  background: var(--bg-elevated);
+}
+
+.message-bubble .course-cat-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.message-bubble .course-cat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.message-bubble .course-cat-info strong {
+  font-size: 0.82rem;
+  color: var(--text-primary);
+}
+
+.message-bubble .course-cat-subjects {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message-bubble .drive-btn-wrapper {
+  text-align: center;
+  margin: 16px 0 12px;
+}
+
+.message-bubble .drive-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #4285f4, #34a853);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(66, 133, 244, 0.35);
+  font-family: inherit;
+}
+
+.message-bubble .drive-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(66, 133, 244, 0.5);
+  color: #fff;
+}
+
+.message-bubble .course-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(245, 158, 11, 0.03));
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.message-bubble .course-note span {
+  flex-shrink: 0;
+}

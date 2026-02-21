@@ -56,6 +56,7 @@ const AI_ENGINE = {
         { id: 'course_desc', keys: ['course description', 'course detail', 'what is course', 'course about', 'وصف الماد', 'تفاصيل الماد', 'شو هالماد', 'عن الماد'], confidence: 91 },
         { id: 'prerequisites', keys: ['prerequisite', 'prereq', 'pre-requisite', 'corequisite', 'co-requisite', 'before course', 'متطلب', 'متطلبات مسبق', 'قبل الماد', 'شروط الماد'], confidence: 94 },
         { id: 'reg_advising', keys: ['advising record', 'registration advising', 'advising session', 'سجل إرشاد', 'إرشاد تسجيل', 'جلسة إرشاد'], confidence: 92 },
+        { id: 'course_exams', keys: ['dawrat', 'past exam', 'old exam', 'previous exam', 'exam paper', 'past paper', 'midterm paper', 'final paper', 'course material', 'study material', 'pdf', 'exam pdf', 'download exam', 'نموذج امتحان', 'دورات', 'دورة', 'دورات سابقة', 'امتحان سابق', 'امتحانات سابقة', 'اوراق امتحان', 'أوراق امتحان', 'نماذج', 'نماذج امتحانات', 'ملفات', 'مواد دراسية', 'تحميل دورات', 'بدي دورات', 'وين الدورات', 'وين بلاقي دورات', 'اريد دورات', 'عندك دورات'], confidence: 96 },
     ],
 
     // Check if query is out of scope (not related to LIU)

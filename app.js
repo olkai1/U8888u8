@@ -52,7 +52,8 @@ class LIUBot {
                     schools: 'What schools and majors does LIU offer?',
                     financial: 'What financial aid and scholarships are available?',
                     tuition: 'What are the tuition fees at LIU?',
-                    contact: 'How can I contact LIU?'
+                    contact: 'How can I contact LIU?',
+                    courses: 'Where can I find past exams and course materials (dawrat)?'
                 };
                 document.querySelectorAll('.topic-btn').forEach(x => x.classList.remove('active'));
                 b.classList.add('active');
@@ -233,6 +234,7 @@ class LIUBot {
             course_desc: () => this.rUmisFeatureDetail(K, 7, ar),
             prerequisites: () => this.rUmisFeatureDetail(K, 8, ar),
             reg_advising: () => this.rUmisFeatureDetail(K, 9, ar),
+            course_exams: () => this.rCourseExams(K, ar),
         };
         if (result && handlers[result.id]) { this._conf = result.confidence; return handlers[result.id](); }
         this._conf = 60;
@@ -482,6 +484,16 @@ class LIUBot {
         return ar
             ? `<p>العفو! 😊 إذا عندك أي سؤال تاني، أنا هون لمساعدتك دائماً. حظاً موفقاً في دراستك! 🎓</p>`
             : `<p>You're welcome! 😊 If you have any other questions, don't hesitate to ask. Good luck with your studies! 🎓</p>`;
+    }
+
+    rCourseExams(K, ar) {
+        const ce = K.courseExams;
+        const cats = ce.categories.map(c =>
+            `<div class="course-cat-card"><span class="course-cat-icon">${c.icon}</span><div class="course-cat-info"><strong>${ar ? c.nameAr : c.name}</strong><span class="course-cat-subjects">${c.subjects.slice(0, 4).join(', ')}${c.subjects.length > 4 ? '...' : ''}</span></div></div>`
+        ).join('');
+        return ar
+            ? `<h3>📄 دورات ومواد دراسية – LIU</h3><p>${ce.descriptionAr}</p><div class="course-categories">${cats}</div><h4>📌 كيفية الاستخدام:</h4><ul>${ce.howToUseAr.split('\n').map(s => '<li>' + s + '</li>').join('')}</ul><div class="drive-btn-wrapper"><a href="${ce.driveLink}" target="_blank" class="drive-btn">📁 فتح مجلد Google Drive</a></div><div class="course-note"><span>⚠️</span> ${ce.noteAr}</div>`
+            : `<h3>📄 Course Materials & Past Exams – LIU</h3><p>${ce.description}</p><div class="course-categories">${cats}</div><h4>📌 How to Use:</h4><ul>${ce.howToUse.split('\n').map(s => '<li>' + s + '</li>').join('')}</ul><div class="drive-btn-wrapper"><a href="${ce.driveLink}" target="_blank" class="drive-btn">📁 Open Google Drive Folder</a></div><div class="course-note"><span>⚠️</span> ${ce.note}</div>`;
     }
 
     rHelp(ar) {
