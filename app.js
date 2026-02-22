@@ -152,7 +152,8 @@ class LIUBot {
                         .replace(/\*(.*?)\*/g, '<em>$1</em>')
                         .replace(/\n- /g, '<br>• ')
                         .replace(/\n\d+\.\s/g, (m) => '<br>' + m.trim() + ' ')
-                        .replace(/\n/g, '<br>');
+                        .replace(/\n/g, '<br>')
+                        .replace(/(https?:\/\/[^\s<,)]+)/g, '<a href="$1" target="_blank" class="info-link">$1</a>');
                     response = formatted;
                 }
             } catch (e) { console.log('API fallback to local:', e); }
