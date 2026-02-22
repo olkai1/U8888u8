@@ -697,7 +697,7 @@ const LIU_KNOWLEDGE = {
   // COURSE MATERIALS (دورات) – PAST EXAMS & PDFs
   // ──────────────────────────────────────────
   courseExams: {
-    driveLink: "https://drive.google.com/drive/folders/1wf6zAUz4AG6iMz4olqqUuxt24bMk6IIN",
+    driveLink: "https://drive.google.com/drive/folders/1wf6zAUz4AG6iMz4olqqUuxt24bMk6IIN?usp=sharing",
     description: "LIU provides a shared Google Drive folder containing past exam papers (دورات), study materials, and PDF resources organized by specialization and course. This is an unofficial student resource maintained by LIU students to help each other succeed.",
     descriptionAr: "توفر الجامعة مجلد Google Drive مشترك يحتوي على دورات سابقة وملفات PDF ومواد دراسية مرتبة حسب الاختصاص والمادة. هذا مورد غير رسمي يديره طلاب LIU لمساعدة بعضهم البعض.",
     categories: [
